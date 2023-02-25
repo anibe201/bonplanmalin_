@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Product Card/Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/navbarstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  </head>
+  <body>
+    <section class="navigation">
+      <div class="nav-container">
+        <div class="brand">
+          <a href="#!">Logo</a>
+        </div>
+        <nav>
+          <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+          <ul class="nav-list" style="margin-right: 300px;">
+            <li>
+              <a href="index.html">Accueil</a>
+            </li>
+            <li>
+              <a href="offres.html">Offres</a>
+            </li>
+            <!-- <li>
+              <a href="#!">Services</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="#!">Web Design</a>
+                </li>
+                <li>
+                  <a href="#!">Web Development</a>
+                </li>
+                <li>
+                  <a href="#!">Graphic Design</a>
+                </li>
+              </ul>
+            </li> -->
+            <li>
+              <a href="aPropos.html">A propos</a>
+            </li>
+            <!-- <li>
+              <a href="#!">Portfolio</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="#!">Web Design</a>
+                </li>
+                <li>
+                  <a href="#!">Web Development</a>
+                </li>
+                <li>
+                  <a href="#!">Graphic Design</a>
+                </li>
+              </ul>
+            </li> -->
+            <li>
+              <a href="contact.html">Contact</a>
+            </li>
+          </ul>
+          <ul style="margin-left: 400px;">
+            <li>
+              <a href=""><button>CONNEXION</button></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+    <div class = "card-wrapper">
+      <div class = "card">
+        <!-- card left -->
+        <div class = "product-imgs">
+          <div class = "img-display">
+            <div class = "img-showcase">
+              <img src = "assets/images/11.jpeg" alt = "shoe image">
+            </div>
+          </div>
+          <div class = "img-select">
+          </div>
+        </div>
+        <!-- card right -->
+        <div class = "product-content">
+          <h2 class = "product-title">Ramasse ordures</h2>
+          <a href = "#" class = "product-link">Vous beneficierai d'un coupon</a>
+          <div class = "product-rating">
+            <i class = "fas fa-star"></i>
+            <i class = "fas fa-star"></i>
+            <i class = "fas fa-star"></i>
+            <i class = "fas fa-star"></i>
+            <i class = "fas fa-star-half-alt"></i>
+            <span>4.7(21)</span>
+          </div>
+
+          <div class = "product-price">
+            <p class = "new-price">Valeur coupon: <span>6000 Fcfa</span></p>
+          </div>
+
+          <div class = "product-detail">
+            <h2>Details du coupon: </h2>
+            <p>Ramassez des ordures dans un endroit publique pendant 7h de temps, Ramassez des ordures dans un endroit publique pendant 7h de temps, <br>Ramassez des ordures dans un endroit publique pendant 7h de temps, Ramassez des ordures dans un endroit publique pendant 7h de temps, Ramassez des ordures dans un endroit publique pendant 7h de temps, </p>
+          </div>
+
+          <div class = "purchase-info">
+            <button type = "button" class = "btn">
+              Commencer la tache <i class = "fas fa-shopping-cart"></i>
+            </button>
+            <button type = "button" class = "btn" style="background-color: green;" onclick="commanderSurWhatsApp()">Contacter par whatsapp</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/script.js"></script>
+    <script>
+            function commanderSurWhatsApp() {
+        // Remplacez le numéro de téléphone par celui du commerçant
+        var numeroWhatsApp = "+2250140990499";
+        
+        // Construisez l'URL WhatsApp avec le numéro de téléphone et un message pré-rempli
+        var urlWhatsApp =
+          "https://api.whatsapp.com/send?phone=" +
+          encodeURIComponent(numeroWhatsApp) +
+          "&text=" +
+          encodeURIComponent("Bonjour, je voudrais commander le produit electronique que j'ai vue sur le site Zoroby.com.");
+
+        // Redirigez l'utilisateur vers l'URL WhatsApp
+        window.location.href = urlWhatsApp;
+      }
+
+      (function($) { // Begin jQuery
+  $(function() { // DOM ready
+    // If a link has a dropdown, add sub menu toggle.
+    $('nav ul li a:not(:only-child)').click(function(e) {
+      $(this).siblings('.nav-dropdown').toggle();
+      // Close one dropdown when selecting another
+      $('.nav-dropdown').not($(this).siblings()).hide();
+      e.stopPropagation();
+    });
+    // Clicking away from dropdown will remove the dropdown class
+    $('html').click(function() {
+      $('.nav-dropdown').hide();
+    });
+    // Toggle open and close nav styles on click
+    $('#nav-toggle').click(function() {
+      $('nav ul').slideToggle();
+    });
+    // Hamburger to X toggle
+    $('#nav-toggle').on('click', function() {
+      this.classList.toggle('active');
+    });
+  }); // end DOM ready
+})(jQuery); // end jQuery
+    </script>
+  </body>
+</html>
